@@ -12,7 +12,7 @@ A clear description of what went wrong.
 
 **Steps to reproduce**
 1. Configure the launcher (include relevant settings from `server/server.env`).
-2. Run `startserver.bat` on Windows or `sh ./startserver.sh` on Linux/macOS.
+2. Run `startserver.cmd` on Windows or `sh ./startserver.sh` on Linux/macOS.
 3. Describe what happens.
 
 **Expected behavior**
@@ -21,7 +21,7 @@ What did you expect to happen?
 **Environment**
 - Operating system and version:
 - Processor architecture (x64 or ARM64):
-- Launcher script (`startserver.bat` or `startserver.sh`):
+- Launcher script (`startserver.cmd` or `startserver.sh`):
 - Minecraft version:
 - Server software and version (Vanilla, Forge, NeoForge, Fabric, Quilt, or Paper):
 - Java version (if known):

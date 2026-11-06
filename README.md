@@ -25,7 +25,7 @@ The launcher supports:
 ## Requirements
 
 - An x64 or ARM64 processor and an internet connection when downloading Java or server files.
-- **Windows:** Windows PowerShell (`powershell.exe`), used by `startserver.bat`.
+- **Windows:** Windows PowerShell (`powershell.exe`), used by `startserver.cmd`.
 - **Linux/macOS:** a POSIX-compatible shell. When Java is downloaded automatically, `tar` and either `curl` or `wget` are needed. To install a server loader, Vanilla, Fabric, Quilt, or Paper require `curl` and `jq`; Forge and NeoForge require either `curl` or `wget` for downloads.
 
 Java does not need to be installed in advance. Unless `JAVA_EXE` points to an existing Java executable, the launcher downloads the configured Temurin runtime from [Adoptium](https://adoptium.net/) into the project directory. An existing Java executable must meet the configured minimum version.
@@ -35,7 +35,7 @@ Java does not need to be installed in advance. Unless `JAVA_EXE` points to an ex
 1. Download or clone this repository.
 2. Review and, if needed, edit [`server/server.env`](server/server.env).
 3. Start the launcher from the project directory:
-   - **Windows:** run `startserver.bat`.
+   - **Windows:** run `startserver.cmd`.
    - **Linux/macOS:** run `sh ./startserver.sh`.
 4. On the first run, wait for Java and the server files to be downloaded and installed.
 5. If Minecraft creates `eula.txt`, read the Minecraft EULA and set `eula=true` to accept it before starting the server again.
@@ -71,7 +71,7 @@ JAVA_ARGS=-Xms4G -Xmx4G -XX:+UseG1GC
 
 ### Launcher options
 
-Optional launcher settings are provided as commented lines near the top of `startserver.bat` and `startserver.sh`. These settings are independent of the server configuration file and can be enabled by uncommenting the relevant line in the launcher for your operating system.
+Optional launcher settings are provided as commented lines near the top of `startserver.cmd` and `startserver.sh`. These settings are independent of the server configuration file and can be enabled by uncommenting the relevant line in the launcher for your operating system.
 
 - `JAVA_EXE`: path to an existing Java executable. If set, automatic Java download is skipped.
 - `INSTALL_ONLY=true`: install missing components and exit without starting the server.
@@ -104,7 +104,7 @@ Downloads are obtained from the respective official upstream services, including
 
 ## Project files
 
-- `startserver.bat` and `startserver.sh`: Windows and Unix launchers.
+- `startserver.cmd` and `startserver.sh`: Windows and Unix launchers.
 - `server/server.env`: server, Java, and project settings.
 - `server/setup.ps1` and `server/setup.sh`: Java and server-software download and installation routines.
 - `server/load-env.cmd` and `server/load-env.sh`: load the configuration into the launcher environment.
