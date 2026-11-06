@@ -2,7 +2,7 @@
 
 :: Check if the environment file exists
 if not exist "!ENV!" (
-    echo ERROR: File not found ^'!ENV!^'
+    echo ERROR: File not found '!ENV!'
     exit /b 1
 )
 
