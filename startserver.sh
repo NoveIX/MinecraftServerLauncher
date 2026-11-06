@@ -25,7 +25,7 @@ cd "$ROOT"
 
 # Check if load-env.sh exists
 if [ ! -f "$LOAD" ]; then
-    printf "error: File not found '%s'\n" "$LOAD"
+    printf '%berror%b: File not found '%s'\n' '\033[31m' '\033[0m' "$LOAD" >&2
     exit 1
 fi
 
@@ -34,12 +34,9 @@ if ! . "$LOAD"; then
     exit 1
 fi
 
-# Terminal title
-printf '\033]0;%s %s v%s\007' "$PROJECT_ID" "$PROJECT_ROLE" "$MODPACK_VERSION"
-
 # Check if setup.sh exists
 if [ ! -f "$SETUP" ]; then
-    printf "error: File not found '%s'\n" "$SETUP"
+    printf '%berror%b: File not found '%s'\n' '\033[31m' '\033[0m' "$SETUP" >&2
     exit 1
 fi
 
@@ -47,6 +44,9 @@ fi
 if ! . "$SETUP"; then
     exit 1
 fi
+
+# Terminal title
+printf '\033]0;%s %s v%s\007' "$PROJECT_ID" "$PROJECT_ROLE" "$MODPACK_VERSION"
 
 # Check if Java is available, install it if missing, and set JAVA_EXE variable
 if [ -z "$JAVA_EXE" ]; then

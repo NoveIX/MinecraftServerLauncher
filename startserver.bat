@@ -35,14 +35,14 @@ if errorlevel 1 (
     pause & exit /b 1
 )
 
-:: Terminal title
-title !PROJECT_ID! !PROJECT_ROLE! v!MODPACK_VERSION!
-
 :: Check if setup.ps1 exists
 if not exist "!SETUP!" (
     echo ERROR: File not found ^'!SETUP!^'
     pause & exit /b 1
 )
+
+:: Terminal title
+title !PROJECT_ID! !PROJECT_ROLE! v!MODPACK_VERSION!
 
 :: Check if Java is available, install it if missing, and set JAVA_EXE variable
 if not defined JAVA_EXE (

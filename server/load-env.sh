@@ -2,7 +2,7 @@
 
 # Check if the environment file exists
 if [ ! -f "$ENV" ]; then
-    printf "error: file not found '%s'\n" "$ENV" >&2
+    printf '%berror%b: File not found '%s'\n' '\033[31m' '\033[0m' "$ENV" >&2
     return 1 2>/dev/null || exit 1
 fi
 

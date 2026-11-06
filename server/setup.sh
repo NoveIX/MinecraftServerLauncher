@@ -22,13 +22,13 @@ log() {
         ;;
 
         *)
-            printf 'invalid log level: %s\n' "$level"
+            printf 'invalid log level: %s\n' "$level" >&2
             return 1
         ;;
 
     esac
 
-    printf '%b%s%b %s\n' "$color" "$level" '\033[0m' "$message"
+    printf '%b%s%b: %s\n' "$color" "$level" '\033[0m' "$message"
 }
 
 log_info() {
@@ -36,7 +36,7 @@ log_info() {
 }
 
 log_warn() {
-    log "warn" "$1"
+    log "warn" "$1" >&2
 }
 
 log_error() {

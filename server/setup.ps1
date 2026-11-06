@@ -31,7 +31,7 @@ function Write-Log {
 
     Write-Host "[" -NoNewline
     Write-Host $Level.ToUpper() -ForegroundColor $Color -NoNewline
-    Write-Host "] $Message"
+    Write-Host "]: $Message"
 }
 
 function Write-LogInfo {
